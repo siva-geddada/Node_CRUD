@@ -1,5 +1,5 @@
 const mongoose = require("mongoose");
-
+const moment = require("moment-timezone");
 const UserProfile = new mongoose.Schema(
   {
     firstName: {
@@ -18,6 +18,11 @@ const UserProfile = new mongoose.Schema(
       unique: true,
       required: [true, "Please enter your email address"],
     },
+    password: {
+      type: String,
+      trim: true,
+      required: [true, "Please enter your password"],
+    },
     phone: {
       type: Number,
       trim: true,
@@ -25,7 +30,7 @@ const UserProfile = new mongoose.Schema(
     },
     dob: {
       type: Date,
-      format: "yyyy-MM-dd",
+      format: "YYYY-MM-DD",
     },
     role: {
       enum: ["user", "admin", "super_admin"],
@@ -33,10 +38,17 @@ const UserProfile = new mongoose.Schema(
       trim: true,
       default: "user",
     },
-    lastLogin: {
+    // lastLogin: {
+    //   type: Date,
+    //   format: moment
+    //     .unix(1502212611)
+    //     .tz("Asia/Kolkata")
+    //     .format("YYYY-MM-DD HH:mm:ss"),
+    //   default: Date.now(moment.unix(1502212611).tz("Asia/Kolkata")),
+    // },
+    createdAt: {
       type: Date,
-      format: "yyyy-MM-ddTHH:mm:ss.SSSZ",
-      default: Date.now,
+      default: moment().tz("Asia/Kolkata"),
     },
     emailVerified: {
       type: Boolean,

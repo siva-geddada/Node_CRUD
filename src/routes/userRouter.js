@@ -4,6 +4,9 @@ const userCtrl = require("../controllers/userCtrl");
 router.post("/signup", function (req, res) {
   userCtrl.signUp(req, res);
 });
+router.post("/verifyEmail", function (req, res) {
+  userCtrl.verifyEmail(req, res);
+});
 router.get("/getAllUsers", function (req, res) {
   userCtrl.getAllUsers(req, res);
 });

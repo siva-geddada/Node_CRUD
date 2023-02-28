@@ -1,8 +1,8 @@
 require("dotenv").config();
 const express = require("express");
-const db = require("../server/src/db/db");
+const db = require("./src/db/db");
 const bodyParser = require("body-parser");
-var cors = require('cors')
+const cors = require("cors");
 
 db;
 const app = express();
@@ -16,7 +16,7 @@ app.use(
 app.use("/api", require("./src/routes/userRouter"));
 
 app.get("/", (req, res) => {
-  res.send("Hello World!");
+  res.send("Hello World.....!");
 });
 
 const PORT = process.env.PORT || 8000;
