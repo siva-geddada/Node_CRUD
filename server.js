@@ -16,7 +16,11 @@ app.use(
 app.use("/api", require("./src/routes/userRouter"));
 
 app.get("/", (req, res) => {
+<<<<<<<<< Temporary merge branch 1
   res.send("Hello World.....!");
+=========
+  res.send("Hello World! blah blah");
+>>>>>>>>> Temporary merge branch 2
 });
 
 const PORT = process.env.PORT || 8000;
