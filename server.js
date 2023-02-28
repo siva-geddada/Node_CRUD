@@ -16,7 +16,7 @@ app.use(
 app.use("/api", require("./src/routes/userRouter"));
 
 app.get("/", (req, res) => {
-  res.send("Hello World!");
+  res.send("Hello World! blah blah");
 });
 
 const PORT = process.env.PORT || 8000;
