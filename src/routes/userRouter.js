@@ -23,4 +23,5 @@ router.post("/updateUser/:id", function (req, res) {
   userCtrl.updateUser(req, res);
 });
 
+
 module.exports = router;
